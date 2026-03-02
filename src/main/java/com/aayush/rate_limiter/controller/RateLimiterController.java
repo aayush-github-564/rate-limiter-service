@@ -23,6 +23,10 @@ public class RateLimiterController {
         RateLimitResponse response =
                 rateLimiterService.check(request.getClientId(), request.getEndpoint());
 
+        if (!response.isAllowed()) {
+        return ResponseEntity.status(429).body(response);
+        } 
+               
         return ResponseEntity.ok(response);
     }
 }

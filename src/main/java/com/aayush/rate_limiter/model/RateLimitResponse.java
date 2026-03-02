@@ -3,12 +3,12 @@ package com.aayush.rate_limiter.model;
 public class RateLimitResponse {
 
     private boolean allowed;
-    private long remaining;
+    private double remaining;
     private long retryAfterMs;
 
     public RateLimitResponse() {}
 
-    public RateLimitResponse(boolean allowed, long remaining, long retryAfterMs) {
+    public RateLimitResponse(boolean allowed, double remaining, long retryAfterMs) {
         this.allowed = allowed;
         this.remaining = remaining;
         this.retryAfterMs = retryAfterMs;
@@ -22,11 +22,11 @@ public class RateLimitResponse {
         this.allowed = allowed;
     }
 
-    public long getRemaining() {
+    public double getRemaining() {
         return remaining;
     }
 
-    public void setRemaining(long remaining) {
+    public void setRemaining(double remaining) {
         this.remaining = remaining;
     }
 
