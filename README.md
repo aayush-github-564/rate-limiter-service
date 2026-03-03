@@ -4,7 +4,7 @@
 ![Redis](https://img.shields.io/badge/Redis-Distributed-red)
 ![Status](https://img.shields.io/badge/Status-Active-blue)
 
-A production-style **Rate Limiting Service** built with **Spring Boot + Redis**, implementing industry-standard algorithms like **Fixed Window**, **Sliding Window** and **Token Bucket (Lua-powered, atomic execution)**.
+A production-style **Rate Limiting Service** built with **Spring Boot + Redis**, implementing industry-standard algorithms like **Fixed Window** and **Token Bucket (Lua-powered, atomic execution)**.
 
 Designed to simulate how real API gateways and backend systems protect services from abuse, traffic spikes, and overload.
 
@@ -254,8 +254,20 @@ This design mirrors systems used in:
 - Atomic scripting with Redis Lua  
 - Clean backend architecture  
 - HTTP protocol correctness  
-- Production-level system design thinking  
+- Production-level system design thinking
 
+---
+
+## 📊 Observability
+
+Integrated **Spring Boot Actuator + Micrometer** with custom business metrics:
+
+- `rate_limiter.total_requests`
+- `rate_limiter.blocked_requests`
+
+Example output from `/actuator/metrics`:
+
+![Metrics](docs/images/ratelimiter_metrics.png)
 ---
 
 ## 🔮 Future Improvements
